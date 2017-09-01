@@ -1,7 +1,0 @@
-{
-    "parent" : "item/custom/icon",
-    "textures": {
-        "particle": "items/upgrades/mode_swap",
-        "texture": "items/upgrades/mode_swap"
-    }
-}

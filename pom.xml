@@ -1,16 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.elmakers.mine.bukkit</groupId>
-	<artifactId>Magic-parent</artifactId>
-	<version>6.9.18-SNAPSHOT</version>
+	<artifactId>CompatibilityLib</artifactId>
+	<version>1.9-1.12.1-1</version>
 
-	<name>Magic-parent</name>
-	<description>Magic maven parent</description>
-
-	<packaging>pom</packaging>
+	<name>Magic Compatibility Library</name>
+	<url>http://mine.elmakers.com</url>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -19,16 +16,10 @@
 		<bukkit.version>1.9.2-R0.1-SNAPSHOT</bukkit.version>
 	</properties>
 
-	<modules>
-		<module>MagicAPI</module>
-		<module>CompatibilityLib</module>
-		<module>Magic</module>
-	</modules>
-
 	<licenses>
 		<license>
-		<name>MIT License</name>
-		<url>LICENSE</url>
+			<name>MIT License</name>
+			<url>LICENSE</url>
 		</license>
 	</licenses>
 
@@ -58,13 +49,13 @@
 
 	<distributionManagement>
 		<repository>
-			<id>maven.elmakers.com</id>
-			<url>http://maven.elmakers.com/repository/</url>
+			<id>OnARandomBox</id>
+			<url>http://repo.onarandombox.com/content/repositories/thirdparty/</url>
 		</repository>
 		<snapshotRepository>
-			<id>maven.elmakers.com</id>
-			<url>http://maven.elmakers.com/repository/</url>
-			</snapshotRepository>
+			<id>OnARandomBox</id>
+			<url>http://repo.onarandombox.com/content/repositories/thirdparty-dev/</url>
+		</snapshotRepository>
 	</distributionManagement>
 
 	<build>
@@ -72,7 +63,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>2.0.2</version>
+				<version>3.3</version>
 				<configuration>
 					<source>${version.java}</source>
 					<target>${version.java}</target>
@@ -85,6 +76,12 @@
 	</build>
 
 	<dependencies>
+		<dependency>
+			<groupId>org.bukkit</groupId>
+			<artifactId>bukkit</artifactId>
+			<version>${bukkit.version}</version>
+			<scope>provided</scope>
+		</dependency>
 		<!-- For Nullability annotations, provided by guava. -->
 		<dependency>
 			<groupId>com.google.code.findbugs</groupId>
@@ -93,4 +90,11 @@
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>
+
+	<repositories>
+		<repository>
+			<id>spigot-repo</id>
+			<url>https://hub.spigotmc.org/nexus/content/groups/public/</url>
+		</repository>
+	</repositories>
 </project>

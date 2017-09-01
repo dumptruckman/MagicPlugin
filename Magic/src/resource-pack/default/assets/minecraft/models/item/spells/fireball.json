@@ -1,7 +1,0 @@
-{
-    "parent" : "item/custom/icon",
-    "textures": {
-        "particle": "items/spells/fireball",
-        "texture": "items/spells/fireball"
-    }
-}
